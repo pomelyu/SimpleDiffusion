@@ -75,6 +75,7 @@ class DDPMTrainer():
         self.optimizer.step()
         return loss.item()
 
+    @torch.no_grad()
     def valid_epoch(self, epoch, x, B=16, T=15):
         # evalulation
         # z = Gaussian(0, 1) if t > 1 else 0
